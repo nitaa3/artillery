@@ -1,0 +1,15 @@
+config:
+  target: "https://dev.d2f1sduhafpfhd.amplifyapp.com"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+  defaults:
+    headers:
+      content-type: "application/json"
+scenarios:
+  - name: payload_semua
+    flow:
+      - post:
+          url: "/semua"  
+          json:
+            "action": "hitungIPKSemua"

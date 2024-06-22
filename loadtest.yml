@@ -1,0 +1,23 @@
+config:
+  target: "https://u4d4nidfz9.execute-api.ap-southeast-2.amazonaws.com/dev/semua"
+  phases:
+    # this injects 10 virtual users every second for 60 seconds
+    - name: constant_arrivial_rate
+      duration: 60
+      arrivalRate: 100
+
+    # this ramp up virtual users from 10 to 50 in 60 seconds
+    # - name: rampup_rate
+    #   duration: 6
+    #   arrivalRate: 10
+
+    # this injects 10 virtual users every second for 60 secondd
+    # - name: fixed_arrivals
+    #   duration: 60
+    #   arrivalCount: 120
+
+scenarios:
+  - name: ujiipk
+    flow:
+      - get:
+          url: "/"
